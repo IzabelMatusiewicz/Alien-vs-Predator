@@ -19,18 +19,19 @@ Image augmentation refers to the technique of applying random transformations to
 Our base set of augmentation techniques includes rescaling, rotation, width shift, height shift, and horizontal flip. 
 Rescaling ensures the pixel values are normalized between 0 and 1. Rotation randomly rotates the images within a range of -20 to +20 degrees. Width shift introduces horizontal translations by randomly shifting the image width by a fraction of 0.2. Height shift introduces vertical translations by randomly shifting the image height by a fraction of 0.2. Horizontal flip randomly flips the images horizontally, adding variation by reversing them along the horizontal axis. 
 
-![download (29)](https://github.com/IzabelMatusiewicz/Alien-vs-Predator/assets/101067795/6cc04fd9-9e95-4159-9ecb-85c99adaccd6)
+![download (32)](https://github.com/IzabelMatusiewicz/Alien-vs-Predator/assets/101067795/da1a04fa-f80f-45bf-87ea-046ffd35919b)
 
 In addition to these techniques, we also applied grayscale conversion (re-scaling to a single channel) and introduced noise to further enhance the diversity and robustness of our augmented dataset (next steps).
 
 #### Grey-scale augumentation
 Converting images to grayscale eliminates color information and keeps only brightness values. This simplifies data representation and reduces computational complexity by processing a single channel instead of three. In the provided code snippet, the color_mode="grayscale" argument ensures that both the training and testing datasets are loaded as grayscale images.
 
-![download (28)](https://github.com/IzabelMatusiewicz/Alien-vs-Predator/assets/101067795/dac937b0-09b8-430b-b216-444db8e57c96)
+![greyscale](https://github.com/IzabelMatusiewicz/Alien-vs-Predator/assets/101067795/e731a7df-15e3-4fb1-8ad2-d6f94b2d32ff)
 
 #### Noise augumentation
 Noise augmentation is a technique where random noise is added to the images in the dataset. This introduces variations in pixel values and helps the model become more robust to noise present in real-world scenarios. By applying noise augmentation, the model can learn to better distinguish signal from noise and improve its performance in noisy environments.
-![download (30)](https://github.com/IzabelMatusiewicz/Alien-vs-Predator/assets/101067795/36209ea3-c409-4f9e-8676-cf1e4d09db28)
+
+![noise](https://github.com/IzabelMatusiewicz/Alien-vs-Predator/assets/101067795/9ba41a82-da1b-426b-b29f-9b74953693ee)
 
 #### Augumentation summary
 The best results were achieved with the baseline data augmentation, and it was utilized for further modeling.
@@ -43,7 +44,7 @@ Transfer learning is a technique in deep learning where a pre-trained model, suc
 ### Gradio implementation
 Gradio is a Python library used to create user-friendly interfaces for machine learning models. In the provided code, the Gradio interface allows users to interact with the "predict_image" function, which takes an input image, preprocesses it, and passes it through a trained model for prediction. The interface displays the input image and the blended heatmap, providing a visual representation of the predicted class and the areas of the image contributing to the prediction. By launching the interface, users can easily upload their own images, view the predicted class, and gain insights into the model's decision-making process.
 
-[gradio.pdf](https://github.com/IzabelMatusiewicz/Alien-vs-Predator/files/11591149/gradio.pdf)
+![gradioo](https://github.com/IzabelMatusiewicz/Alien-vs-Predator/assets/101067795/f0bc55c0-6f03-4cd4-83fd-239fa70c1141)
 
 ## Summary
 The project focused on the Alien-vs-Predator dataset and aimed to explore various techniques to improve model performance. Initially, a small dataset was augmented using different techniques, including rescaling, rotation, width and height shifting, horizontal flipping, grayscale conversion, and noise augmentation. The baseline augmentation approach yielded the best results and was selected for further modeling. Transfer learning was then employed using the ResNet50 model with pre-trained weights. The pre-trained layers were frozen, and new classification layers were added to adapt the model to the specific task. The Gradio library was utilized to create an interactive interface that allows users to upload images and visualize the model's predictions, providing insights into the model's decision-making process. The project highlighted the effectiveness of augmentation techniques and the benefits of transfer learning, while demonstrating the capabilities of the Gradio library in creating user-friendly model interfaces.
